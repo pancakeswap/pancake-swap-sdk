@@ -12,7 +12,7 @@ describe('Token', () => {
     })
 
     it('false if chain id differs', () => {
-      expect(new Token(ChainId.ROPSTEN, ADDRESS_ONE, 18).equals(new Token(ChainId.MAINNET, ADDRESS_ONE, 18))).toBe(
+      expect(new Token(ChainId.TESTNET, ADDRESS_ONE, 18).equals(new Token(ChainId.MAINNET, ADDRESS_ONE, 18))).toBe(
         false
       )
     })
