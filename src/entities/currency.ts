@@ -12,27 +12,24 @@ export class Currency {
   public readonly decimals: number
   public readonly symbol?: string
   public readonly name?: string
-  public readonly projectLink?: string
 
   /**
    * The only instance of the base class `Currency`.
    */
-  public static readonly ETHER: Currency = new Currency(18, 'BNB', 'BNB', 'https://www.binance.com/')
+  public static readonly ETHER: Currency = new Currency(18, 'BNB', 'BNB')
 
   /**
    * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
    * @param decimals decimals of the currency
    * @param symbol symbol of the currency
    * @param name of the currency
-   * @param projectLink currency website
    */
-  protected constructor(decimals: number, symbol?: string, name?: string, projectLink?: string) {
+  protected constructor(decimals: number, symbol?: string, name?: string) {
     validateSolidityTypeInstance(JSBI.BigInt(decimals), SolidityType.uint8)
 
     this.decimals = decimals
     this.symbol = symbol
     this.name = name
-    this.projectLink = projectLink
   }
 }
 

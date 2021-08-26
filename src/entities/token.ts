@@ -9,6 +9,7 @@ import { Currency } from './currency'
 export class Token extends Currency {
   public readonly chainId: ChainId
   public readonly address: string
+  public readonly projectLink?: string
 
   public constructor(
     chainId: ChainId,
@@ -18,9 +19,10 @@ export class Token extends Currency {
     name?: string,
     projectLink?: string
   ) {
-    super(decimals, symbol, name, projectLink)
+    super(decimals, symbol, name)
     this.chainId = chainId
     this.address = validateAndParseAddress(address)
+    this.projectLink = projectLink
   }
 
   /**
