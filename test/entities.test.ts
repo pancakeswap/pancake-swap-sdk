@@ -167,7 +167,7 @@ describe('entities', () => {
             const trade = new Trade(route, outputAmount, TradeType.EXACT_INPUT)
 
             expect(trade.priceImpact.toSignificant(18)).toEqual(
-              tokens[1].decimals === 9 ? '0.300000099400899902' : '0.3000000000000001'
+              tokens[1].decimals === 9 ? '0.2500001008007499' : '0.3000000000000001'
             )
           }
         })
