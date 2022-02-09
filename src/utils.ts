@@ -22,11 +22,7 @@ export function validateAndParseAddress(address: string): string {
 }
 
 export function parseBigintIsh(bigintIsh: BigintIsh): JSBI {
-  return bigintIsh instanceof JSBI
-    ? bigintIsh
-    : typeof bigintIsh === 'bigint'
-    ? JSBI.BigInt(bigintIsh.toString())
-    : JSBI.BigInt(bigintIsh)
+  return bigintIsh instanceof JSBI ? bigintIsh : JSBI.BigInt(bigintIsh)
 }
 
 // mock the on-chain sqrt function
