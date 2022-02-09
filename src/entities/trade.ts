@@ -1,4 +1,5 @@
 import invariant from 'tiny-invariant'
+import { InsufficientInputAmountError, InsufficientReservesError } from '..'
 
 import { ChainId, ONE, TradeType, ZERO } from '../constants'
 import { sortedInsert } from '../utils'
@@ -281,7 +282,7 @@ export class Trade {
         ;[amountOut] = pair.getOutputAmount(amountIn)
       } catch (error) {
         // input too low
-        if (error.isInsufficientInputAmountError) {
+        if ((error as InsufficientInputAmountError).isInsufficientInputAmountError) {
           continue
         }
         throw error
@@ -369,7 +370,7 @@ export class Trade {
         ;[amountIn] = pair.getInputAmount(amountOut)
       } catch (error) {
         // not enough liquidity in this pair
-        if (error.isInsufficientReservesError) {
+        if ((error as InsufficientReservesError).isInsufficientReservesError) {
           continue
         }
         throw error
