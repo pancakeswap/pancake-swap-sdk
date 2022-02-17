@@ -118,4 +118,11 @@ describe.only('Fraction', () => {
       ).toEqual(new Fraction(JSBI.BigInt(60), JSBI.BigInt(48)))
     })
   })
+  describe('#asFraction', () => {
+    it('returns an equivalent but not the same reference fraction', () => {
+      const f = new Fraction(1, 2)
+      expect(f.asFraction).toEqual(f)
+      expect(f === f.asFraction).toEqual(false)
+    })
+  })
 })

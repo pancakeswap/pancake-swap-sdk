@@ -141,4 +141,11 @@ export class Fraction {
     Big.RM = toFixedRounding[rounding]
     return new Big(this.numerator.toString()).div(this.denominator.toString()).toFormat(decimalPlaces, format)
   }
+
+  /**
+   * Helper method for converting any super class back to a fraction
+   */
+  public get asFraction(): Fraction {
+    return new Fraction(this.numerator, this.denominator)
+  }
 }
