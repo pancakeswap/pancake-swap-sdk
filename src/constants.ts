@@ -19,18 +19,34 @@ export enum Rounding {
   ROUND_UP
 }
 
-export const FACTORY_ADDRESS = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73'
-
-export const FACTORY_ADDRESS_MAP = {
-  [ChainId.MAINNET]: FACTORY_ADDRESS,
-  [ChainId.TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17'
+export enum SWAP_NAME {
+  pancakeswap = 'pancakeswap',
+  apeswap = 'apeswap',
+  biswap = 'biswap',
 }
 
-export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
+export const FACTORY_ADDRESS_SWAPS = {
+  [SWAP_NAME.pancakeswap]: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
+  [SWAP_NAME.apeswap]: '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
+  [SWAP_NAME.biswap]: '0x858e3312ed3a876947ea49d572a7c42de08af7ee',
+}
+
+export const FACTORY_ADDRESS_MAP = {
+  // [ChainId.MAINNET]: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
+  [ChainId.MAINNET]: FACTORY_ADDRESS_SWAPS,
+  [ChainId.TESTNET]:  FACTORY_ADDRESS_SWAPS // 0x6725f303b657a9451d8ba641348b6761a6cc7a17
+}
+
+export const INIT_CODE_HASH_SWAPS = {
+  [SWAP_NAME.pancakeswap]: '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5',
+  [SWAP_NAME.apeswap]: '0xf4ccce374816856d11f00e4069e7cada164065686fbef53c6167a63ec2fd8c5b',
+  [SWAP_NAME.biswap]: '0xfea293c909d87cd4153593f077b76bb7e94340200f4ee84211ae8e4f9bd7ffdf',
+}
 
 export const INIT_CODE_HASH_MAP = {
-  [ChainId.MAINNET]: INIT_CODE_HASH,
-  [ChainId.TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66'
+  // [ChainId.MAINNET]: '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5',
+  [ChainId.MAINNET]: INIT_CODE_HASH_SWAPS,
+  [ChainId.TESTNET]: INIT_CODE_HASH_SWAPS // '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66'
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
