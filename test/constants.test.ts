@@ -1,4 +1,4 @@
-import { INIT_CODE_HASH } from '../src/constants'
+import { INIT_CODE_HASH_SWAPS, SWAP_NAME } from '../src/constants'
 import fs from 'fs'
 import path from 'path'
 import { keccak256 } from '@ethersproject/solidity'
@@ -12,7 +12,7 @@ const COMPUTED_INIT_CODE_HASH = keccak256(['bytes'], [`0x${bytecode}`])
 describe('constants', () => {
   describe('INIT_CODE_HASH', () => {
     it('matches computed bytecode hash', () => {
-      expect(COMPUTED_INIT_CODE_HASH).toEqual(INIT_CODE_HASH)
+      expect(COMPUTED_INIT_CODE_HASH).toEqual(INIT_CODE_HASH_SWAPS[SWAP_NAME.pancakeswap])
     })
   })
 })

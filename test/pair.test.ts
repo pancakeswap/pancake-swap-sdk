@@ -1,4 +1,4 @@
-import { ChainId, Token, Pair, TokenAmount, WETH, Price } from '../src'
+import { ChainId, Token, Pair, TokenAmount, WETH, Price, SWAP_NAME } from '../src'
 
 describe('Pair', () => {
   const USDC = new Token(ChainId.MAINNET, '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', 18, 'USDC', 'USD Coin')
@@ -14,7 +14,7 @@ describe('Pair', () => {
 
   describe('#getAddress', () => {
     it('returns the correct address', () => {
-      expect(Pair.getAddress(USDC, DAI)).toEqual('0xadBba1EF326A33FDB754f14e62A96D5278b942Bd')
+      expect(Pair.getAddress(USDC, DAI, SWAP_NAME.pancakeswap)).toEqual('0xadBba1EF326A33FDB754f14e62A96D5278b942Bd')
     })
   })
 
