@@ -1,14 +1,14 @@
 import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
-import { ChainId, WETH as _WETH, TradeType, Rounding, Token, TokenAmount, Pair, Route, Trade } from '../src'
+import { ChainId, WNATIVE as _WETH, TradeType, Rounding, Token, TokenAmount, Pair, Route, Trade } from '../src'
 
 const ADDRESSES = [
   '0x0000000000000000000000000000000000000001',
   '0x0000000000000000000000000000000000000002',
   '0x0000000000000000000000000000000000000003'
 ]
-const CHAIN_ID = ChainId.TESTNET
-const WETH = _WETH[ChainId.TESTNET]
+const CHAIN_ID = ChainId.BSC_TESTNET
+const WETH = _WETH[ChainId.BSC_TESTNET]
 const DECIMAL_PERMUTATIONS: [number, number, number][] = [
   [0, 0, 0],
   [0, 9, 18],
