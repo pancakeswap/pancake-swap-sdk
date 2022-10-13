@@ -1,17 +1,17 @@
 {
-  "name": "@pancakeswap/sdk",
+  "name": "quasar-sdk-core",
   "license": "MIT",
-  "version": "2.4.3",
-  "description": "🛠 An SDK for building applications on top of Pancakeswap.",
+  "version": "1.0.0",
+  "description": "🛠 An SDK for building applications on top of the Vefi DEX.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-swap-sdk.git",
+  "repository": "https://github.com/Vefi-Ecosystem/dex-sdk.git",
   "keywords": [
-    "pancakeswap",
-    "bsc"
+    "quasar",
+    "evm"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.4",
+    "quasar-v1-core": "^1.0.1",
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
     "toformat": "^2.0.0"
@@ -40,7 +41,7 @@
     "@ethersproject/address": "^5.0.2",
     "@ethersproject/contracts": "^5.0.2",
     "@ethersproject/networks": "^5.0.2",
-    "@ethersproject/providers": "^5.0.5",
+    "@ethersproject/providers": "^5.7.1",
     "@ethersproject/solidity": "^5.0.2",
     "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.25",
@@ -51,8 +52,11 @@
     "node": ">=10"
   },
   "prettier": {
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true
+    "printWidth": 150,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "tabWidth": 2
   }
 }
